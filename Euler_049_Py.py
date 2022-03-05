@@ -31,9 +31,10 @@ primes = prime_Sieve(10000) #all 4 digit primes
 #Generate permutations, 9 choose 4
 import itertools
 from itertools import permutations
-from itertools import combinations
-allComb = itertools.product([1,2,3,4,5,6,7,8,9],repeat = 4) #should update to allow replacement
-validList = []
+#from itertools import combinations
+
+allComb = itertools.product([1,2,3,4,5,6,7,8,9],repeat = 4) #should update to allow replacement... also very redudant
+validList = [] #stores solutions. Should be 2
 for i in list(allComb):
     permTemp = permutations(i,4) #take permutation of each set of combinations
     perm = [] #temporary permutation list, used for iterating
@@ -45,20 +46,15 @@ for i in list(allComb):
                 temp1 = perm[j][0]*1000 + perm[j][1]*100 + perm[j][2]*10 + perm[j][3] #first num
                 temp2 = perm[k][0]*1000 + perm[k][1]*100 + perm[k][2]*10 + perm[k][3] #second num
                 ave = int((temp1 + temp2)/2) #in arithmetic sequence, ave of first and third term equals second term
-                if temp1 in primes and temp2 in primes and ave in primes:
+                if temp1 in primes and temp2 in primes and ave in primes: #all nums must be prime
                     for x in perm:
                         temp3 = x[0]*1000 + x[1]*100 + x[2]*10 + x[3]
-                        if temp3 == ave and temp1 < ave < temp2:
+                        if temp3 == ave and temp1 < ave < temp2: #for eliminating redundancies
                                 #print("SUCCESS")
                                 answer = perm[j] + x + perm[k]
                                 if answer not in validList:
                                     print(answer)
-                                    validList.append(answer)
-                                    #success = True
-                                
-                    
-
-
- 
+                                    validList.append(answer)                                
+                     
     #Take all 2-pair combinations of permutable numbers, average them, and see if the result is equal to a third permutation
     #Generate sets of permutations
