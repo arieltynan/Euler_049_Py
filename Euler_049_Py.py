@@ -1,6 +1,6 @@
 #Ariel Tynan
 #Euler Problem 049, Prime permutations, solved in Python
-#Started 5 March 2022
+#Started and finished 5 March 2022
 
 #Prime number sieve up to 10000
 def prime_Sieve(n): #Function modified from Geeksforgeeks
