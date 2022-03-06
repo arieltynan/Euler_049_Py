@@ -33,7 +33,7 @@ import itertools
 from itertools import permutations
 #from itertools import combinations
 
-allComb = itertools.product([1,2,3,4,5,6,7,8,9],repeat = 4) #should update to allow replacement... also very redudant
+allComb = itertools.product([1,2,3,4,5,6,7,8,9],repeat = 4) #should update to allow replacement... also very redundant
 validList = [] #stores solutions. Should be 2
 for i in list(allComb):
     permTemp = permutations(i,4) #take permutation of each set of combinations
